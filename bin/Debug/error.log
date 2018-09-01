@@ -1,0 +1,12 @@
+﻿System.InvalidCastException: 型 'CurtainFireMaker.Entities.ShotTypeWavefront' のオブジェクトを型 'CurtainFireMaker.Renderer.IRenderer`1[CurtainFireMaker.Entities.Entity]' にキャストできません。
+   場所 CurtainFireMaker.Entities.EntityShot.get_Renderer() 場所 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\Entities\EntityShot.cs:行 24
+   場所 CurtainFireMaker.Renderer.WorldRenderer.<>c.<Render>b__11_0(Entity e) 場所 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\Renderer\WorldRenderer.cs:行 62
+   場所 System.Linq.Lookup`2.Create[TSource](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   場所 System.Linq.Enumerable.ToLookup[TSource,TKey](IEnumerable`1 source, Func`2 keySelector)
+   場所 CurtainFireMaker.Renderer.WorldRenderer.Render() 場所 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\Renderer\WorldRenderer.cs:行 62
+   場所 CurtainFireMaker.Game.OnRenderFrame(FrameEventArgs e) 場所 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\Game.cs:行 60
+   場所 OpenTK.GameWindow.RaiseRenderFrame(Double elapsed, Double& timestamp)
+   場所 OpenTK.GameWindow.DispatchRenderFrame()
+   場所 OpenTK.GameWindow.Run(Double updates_per_second, Double frames_per_second)
+   場所 OpenTK.GameWindow.Run(Double updateRate)
+   場所 CurtainFireMaker.Program.Main() 場所 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\Program.cs:行 23
