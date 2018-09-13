@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CurtainFireMaker
+namespace CurtainFire4D
 {
     public static class CollectionUtil
     {

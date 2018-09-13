@@ -8,22 +8,18 @@ using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using gl = OpenTK.Graphics.OpenGL.GL;
 
-namespace CurtainFireMaker.Renderer
+namespace CurtainFire4D.Renderer
 {
     public class WorldRenderer
     {
         public World World { get; }
 
-        public GameCamera Camera { get; }
         public Size Size { get; }
 
         public WorldRenderer(World world, Size size)
         {
             World = world;
             Size = size;
-
-            Camera = new GameCamera(World);
-            Camera.Spawn();
         }
 
         public void Init()
@@ -51,7 +47,7 @@ namespace CurtainFireMaker.Renderer
 
         public void Render()
         {
-            Camera.Update();
+            World.Camera.Update();
 
             gl.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
@@ -70,13 +66,13 @@ namespace CurtainFireMaker.Renderer
             gl.Viewport(0, 0, Size.Width, Size.Height);
 
             gl.MatrixMode(MatrixMode.Projection);
-            Camera.LoadProjectionMatrix(Size.Width, Size.Height);
+            World.Camera.LoadProjectionMatrix(Size.Width, Size.Height);
         }
 
         private void SetModelViewMatrix()
         {
             gl.MatrixMode(MatrixMode.Modelview);
-            Camera.LoadModelViewMatrix();
+            World.Camera.LoadModelViewMatrix();
         }
     }
 }

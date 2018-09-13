@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CurtainFireMaker.Entities;
-using CurtainFireMaker.Renderer;
+using CurtainFire4D.Entities;
+using CurtainFire4D.Renderer;
 using CurtainFireCore;
 using IronPython.Runtime;
 using IronPython.Runtime.Operations;
 
-namespace CurtainFireMaker
+namespace CurtainFire4D
 {
     public class World
     {
@@ -18,11 +18,14 @@ namespace CurtainFireMaker
         public HashSet<Entity> EntityList { get; } = new HashSet<Entity>();
         public int FrameCount { get; set; }
 
+        public GameCamera Camera { get; }
+
         private ScheduledTaskManager TaskScheduler { get; } = new ScheduledTaskManager();
 
         public World(Game game)
         {
-
+            Camera = new GameCamera(this);
+            Camera.Spawn();
         }
 
         public void Init()

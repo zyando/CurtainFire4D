@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace CurtainFireMaker
+namespace CurtainFire4D
 {
     static class Program
     {
@@ -18,7 +18,8 @@ namespace CurtainFireMaker
 
                 try
                 {
-                    using (var game = new Game())
+                   // using (var game = new Game(Environment.GetCommandLineArgs()[1]))
+                    using (var game = new Game("test.py"))
                     {
                         game.Run(30.0);
                     }

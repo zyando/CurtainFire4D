@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{72AFE957-19C8-4616-A241-D950572B4119}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CurtainFireMaker</RootNamespace>
-    <AssemblyName>CurtainFireMaker</AssemblyName>
+    <RootNamespace>CurtainFire4D</RootNamespace>
+    <AssemblyName>CurtainFire4D</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,7 +31,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CurtainFire4D.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>packages\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>packages\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.VFW">
+      <HintPath>packages\AForge.Video.VFW.dll</HintPath>
+    </Reference>
     <Reference Include="DxMath">
       <HintPath>..\CurtainFireMakerPlugin\packages\DxMath.dll</HintPath>
     </Reference>
@@ -71,8 +83,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\GameCamera.cs" />
     <Compile Include="Renderer\IRenderer.cs" />
+    <Compile Include="Renderer\TextureGenerator.cs" />
     <Compile Include="Renderer\Wavefront.cs" />
     <Compile Include="Renderer\WorldRenderer.cs" />
+    <Compile Include="VectorExtensions.cs" />
     <Compile Include="World.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,6 +109,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resource\ico.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -109,6 +126,28 @@
       <Name>VecMath</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="config.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Textures\Butterfly.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Textures\MagicCircle_FantasyHeaven.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Textures\MagicCircle_Simple.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Textures\Maple.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Textures\sp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Textures\Sphere.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

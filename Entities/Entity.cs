@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CurtainFireCore;
-using CurtainFireMaker.Renderer;
+using CurtainFire4D.Renderer;
 using IronPython.Runtime;
 using IronPython.Runtime.Operations;
 using VecMath;
+using OpenTK.Graphics.OpenGL;
+using gl = OpenTK.Graphics.OpenGL.GL;
 
-namespace CurtainFireMaker.Entities
+namespace CurtainFire4D.Entities
 {
     public abstract class Entity
     {
@@ -24,18 +26,20 @@ namespace CurtainFireMaker.Entities
         public virtual Matrix4 LocalMat { get; protected set; }
 
         public virtual Vector3 Pos { get; set; }
+
         public virtual Quaternion Rot { get; set; } = Quaternion.Identity;
 
-        public virtual Entity ParentEntity { get; protected set; }
+        public virtual Entity Parent { get; protected set; }
 
         private ScheduledTaskManager TaskScheduler { get; } = new ScheduledTaskManager();
 
         public int LifeSpan { get; set; }
         public int FrameCount { get; set; }
 
-        public Entity(World world)
+        public Entity(World world, Entity parentEntity = null)
         {
             World = world;
+            Parent = parentEntity;
         }
 
         public virtual void Frame()
@@ -43,7 +47,12 @@ namespace CurtainFireMaker.Entities
             FrameCount++;
 
             LocalMat = new Matrix4(Rot, Pos);
-            WorldMat = ParentEntity != null ? LocalMat * ParentEntity.WorldMat : LocalMat;
+            WorldMat = Parent != null ? LocalMat * Parent.WorldMat : LocalMat;
+        }
+
+        public virtual void PreRender()
+        {
+            gl.MultMatrix((double[])WorldMat);
         }
 
         public void Spawn()

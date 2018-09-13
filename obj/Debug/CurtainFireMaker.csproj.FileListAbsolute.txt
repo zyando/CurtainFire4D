@@ -26,3 +26,10 @@ C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\obj\Debug
 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\OpenTK.dll
 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\OpenTK.pdb
 C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\OpenTK.xml
+C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\Resource\ico.obj
+C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\AForge.dll
+C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\AForge.Video.dll
+C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\AForge.Video.VFW.dll
+C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\AForge.xml
+C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\AForge.Video.xml
+C:\Users\hiroto\Documents\Visual Studio 2017\Projects\CurtainFireMaker\bin\Debug\AForge.Video.VFW.xml

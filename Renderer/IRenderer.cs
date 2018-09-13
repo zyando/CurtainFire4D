@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CurtainFireMaker.Entities;
+using CurtainFire4D.Entities;
 
-namespace CurtainFireMaker.Renderer
+namespace CurtainFire4D.Renderer
 {
     public interface IRenderer
     {

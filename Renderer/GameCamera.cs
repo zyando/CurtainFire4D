@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CurtainFireMaker.Entities;
+using CurtainFire4D.Entities;
 using OpenTK.Graphics.OpenGL;
 using gl = OpenTK.Graphics.OpenGL.GL;
 using VecMath;
 
-namespace CurtainFireMaker.Renderer
+namespace CurtainFire4D.Renderer
 {
     public class GameCamera : Entity
     {
@@ -33,7 +33,7 @@ namespace CurtainFireMaker.Renderer
 
         public void LoadModelViewMatrix()
         {
-            var matrix = OpenTK.Matrix4.LookAt((OpenTK.Vector3)Pos, (OpenTK.Vector3)(Pos - Vector3.UnitZ * Rot), (OpenTK.Vector3)Upward);
+            var matrix = OpenTK.Matrix4.LookAt(Pos.GLVec(), (Pos - Vector3.UnitZ * Rot).GLVec(), Upward.GLVec());
             gl.LoadMatrix(ref matrix);
         }
 

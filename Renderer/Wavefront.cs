@@ -5,11 +5,11 @@ using System.Text;
 using System.IO;
 using VecMath;
 
-namespace CurtainFireMaker.Renderer
+namespace CurtainFire4D.Renderer
 {
     public class Wavefront
     {
-        public Vector3[] Vertices { get; }
+        public Vector3[] Vertices { get; private set; }
         public Vector3[] Normals { get; }
         public Vector2[] Texcoords { get; }
         public int[] Indices { get; }
@@ -92,9 +92,9 @@ namespace CurtainFireMaker.Renderer
             }
         }
 
-        public void Render()
+        public void Scale(float scale)
         {
-
+            Vertices = Vertices.Select(v => v * scale).ToArray();
         }
     }
 }
